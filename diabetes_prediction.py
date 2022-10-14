@@ -41,13 +41,30 @@ df.to_csv(r'treino.csv')
 df = pd.DataFrame(base_Treinamento.iloc[615:])
 df.to_csv(r'teste.csv')
 
-"""Vizualização das 10 primeiras linhas"""
-
+"""Vizualização das relações entre os atributos"""
 
 corr_matrix=base_Treinamento.corr() 
 sns.clustermap(corr_matrix,annot=True,fmt=".2f")
 plt.title("Correlação entre atributos")
 plt.show()
+
+sns.countplot(x = base_Treinamento['Outcome']);
+
+plt.hist(x = base_Treinamento['Pregnancies']);
+
+plt.hist(x = base_Treinamento['Glucose']);
+
+plt.hist(x = base_Treinamento['BloodPressure']);
+
+plt.hist(x = base_Treinamento['SkinThickness']);
+
+plt.hist(x = base_Treinamento['Insulin']);
+
+plt.hist(x = base_Treinamento['BMI']);
+
+plt.hist(x = base_Treinamento['DiabetesPedigreeFunction']);
+
+plt.hist(x = base_Treinamento['Age']);
 
 """Separando atributos de classes"""
 
